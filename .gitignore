@@ -1,0 +1,9 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore Python cache directories
+__pycache__/
+venv/
+
+# Ignore environment files
+.env
