@@ -65,9 +65,9 @@ uvicorn main:app --reload
 CREATE DATABASE database_name;
 ```
 ### 4.2 Create tables:
+#### 4.2.1 Create users table:
 ```sql
-Create users table:
-		CREATE TABLE IF NOT EXISTS users
+CREATE TABLE IF NOT EXISTS users
 (
     id SERIAL PRIMARY KEY,
     username VARCHAR(100) NOT NULL,
@@ -75,7 +75,7 @@ Create users table:
     hashed_password VARCHAR(100) NOT NULL
 );
 ```
-### 4.3 Create watchlist table:
+#### 4.2.2 Create watchlist table:
 ```sql
 CREATE TABLE IF NOT EXISTS watchlist
 (
