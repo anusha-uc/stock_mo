@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AddSymbol from './AddSymbol';
-import Button from '@mui/material/Button';
+import { Box, Button }from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 
 interface WatchlistItem {
@@ -39,24 +39,26 @@ const Watchlist: React.FC = () => {
   };
 
   return (
-    <div>
-      <h2>Watchlist</h2>
-      <AddSymbol />
-      
-      {watchlist.map((item, index) => (
-        <div key={index}>
-          <br />
-          <Link to={`/dashboard/${item.symbol}`} style={{ textDecoration: 'none' }}>
-            <Button variant="contained" color='info'>
-              {item.symbol}
-            </Button>
-          </Link>
-          
-          <br />
-        </div>
-      ))}
-      
-    </div>
+    <Box display="flex" justifyContent="center">
+      <div>
+      <br />
+        <h1>Watchlist</h1>
+        <AddSymbol />
+
+        {watchlist.map((item, index) => (
+          <div key={index}>
+            <br />
+            <Link to={`/dashboard/${item.symbol}`} style={{ textDecoration: 'none' }}>
+              <Button variant="contained" color='info'>
+                {item.symbol}
+              </Button>
+            </Link>
+
+            <br />
+          </div>
+        ))}
+      </div>
+    </Box>
   );
 };
 

@@ -27,6 +27,11 @@ function ResponsiveAppBar() {
       window.location.href ='/watchlist';
      
     }
+    if (( location.pathname === '/' )) {
+      // Redirect to the home page if token is available
+      window.location.href ='/login';
+     
+    }
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };

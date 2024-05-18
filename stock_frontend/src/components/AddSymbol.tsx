@@ -41,7 +41,7 @@ const AddSymbol: React.FC = () => {
         variant="outlined"
         value={symbol}
         onChange={handleSymbolChange}
-      />   <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+      />   <Button variant="outlined" onClick={handleSubmit}>Add</Button>
     </div>
   );
 };
