@@ -47,13 +47,14 @@ pip install requirements.txt
 ```
 
 ### 3.2 Update environment variables in .env file
+```txt
 DB_NAME=<Database Name>  
 DB_USER=<Database Username>  
 DB_PASSWORD=<Database Password>  
 DB_HOST=<Database Server(‘localhost’ for local development)>  
 DB_PORT=<Database Port>  
 SECRET_KEY=<Secret key for creating token>
-
+```
 ### 3.3 Run Backend
 ```sh
 uvicorn main:app --reload
