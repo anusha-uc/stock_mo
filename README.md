@@ -1,3 +1,4 @@
+
 # StockMo
 
 This is a web application to monitor the stock current values from your watchlist.
@@ -26,16 +27,64 @@ git clone https://github.com/anusha-uc/stock_mo.git
 ```sh
 cd stock_frontend
 ```
-### 2.2. Install react Dependencies
+### 2.2 Install react Dependencies
 ```sh
 npm install
 ```
-### 2.3. Run the Project
+### 2.3 Update your token
+Change https://www.alphavantage.co/ token in Dashboard.tsx file component
+const API_KEY = '<token>'; 
+
+### 2.4 Run the Project
 ```sh
 npm start
 ```
 
-To run 
+## 3. Backend
+### 3.1 Install packages
+```sh
+pip install requirements.txt
+```
 
-## How to use 
-Clone th
+### 3.2 Update environment variables in .env file
+DB_NAME=<Database Name>  
+DB_USER=<Database Username>  
+DB_PASSWORD=<Database Password>  
+DB_HOST=<Database Server(‘localhost’ for local development)>  
+DB_PORT=<Database Port>  
+SECRET_KEY=<Secret key for creating token>
+
+### 3.3 Run Backend
+```sh
+uvicorn main:app --reload
+```
+
+## 4.Create DB and tables in PostgreSQL
+### 4.1 Create Database:
+```sql
+CREATE DATABASE database_name;
+```
+### 4.2 Create tables:
+```sql
+Create users table:
+		CREATE TABLE IF NOT EXISTS users
+(
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    hashed_password VARCHAR(100) NOT NULL
+);
+```
+### 4.3 Create watchlist table:
+```sql
+CREATE TABLE IF NOT EXISTS watchlist
+(
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    symbol VARCHAR(20) NOT NULL,
+    CONSTRAINT watchlist_username_fkey FOREIGN KEY (username)
+        REFERENCES users (username) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+);
+```
