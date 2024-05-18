@@ -88,3 +88,6 @@ CREATE TABLE IF NOT EXISTS watchlist
         ON DELETE NO ACTION
 );
 ```
+#### For more details refer the below documentation
+[Download Word Document](https://docs.google.com/document/d/1X1keCvPDKXnsryUWYjHkGsZ96oUlhnuqxRP7fFQZ924)
+
